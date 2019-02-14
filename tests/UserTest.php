@@ -1,5 +1,5 @@
 <?php
-
+use PHPUnit\Framework\TestCase;
 require __DIR__ . "/../src/Entity/Game.php";
 require __DIR__ . "/../src/Entity/Rating.php";
 require __DIR__ . "/../src/Entity/User.php";
