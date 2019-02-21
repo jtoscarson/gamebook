@@ -8,7 +8,7 @@ require __DIR__ . "/../src/Entity/User.php";
 class GameTest extends TestCase {
 
     public function testImage_WithNull_ReturnsPlaceholder(){
-
+        
     }
 
     public function testImage_WithPath_ReturnsPath() {

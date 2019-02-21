@@ -20,6 +20,6 @@ class UserTest extends PHPUnit_Framework_TestCase {
     }
 
     public function testRatingsByGenre_With1ZombieAnd1Shooter_Returns1Zombie() {
-
+        
     }
 }
