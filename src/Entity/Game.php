@@ -1,19 +1,23 @@
 <?php
-class Game
-{
+class Game {
    protected $title;
    protected $imagePath;
    protected $ratings;
    protected $id;
+   protected $genreCode;
 
-   public function __construct($id = null) {
+   public function __construct($id = null)  {
        $this->id = $id;
    }
-
    public function getId() {
        return $this->id;
    }
-
+   public function getGenreCode() {
+       return $this->genreCode;
+   }
+   public function setGenreCode($value) {
+       $this->genreCode = $value;
+   }
    public function getAverageScore() {
        $ratings = $this->getRatings();
        $numRatings = count($ratings);
@@ -33,7 +37,6 @@ class Game
        }
        return $total / $numRatings;
    }
-
    public function toArray() {
        $array = [
            'title' => $this->getTitle(),
@@ -45,36 +48,29 @@ class Game
        }
        return $array;
    }
-
    public function isRecommended($user) {
        $compatibility = $user->getGenreCompatibility($this->getGenreCode());
        return $this->getAverageScore() / 10 * $compatibility >= 3;
    }
-
    public function getTitle() {
        return $this->title;
    }
-
    public function setTitle($value) {
-    $this->title = $value;
-}
-
-public function getImagePath() {
-    if ($this->imagePath == null) {
-        return 'images/placeholder.png';
-    }
-    return $this->imagePath;
-}
-
-public function setImagePath($value) {
-    $this->imagePath = $value;
-}
-
-public function getRatings() {
-    return $this->ratings;
-}
-
-public function setRatings($value) {
-    $this->ratings = $value;
-}
+       $this->title = $value;
+   }
+   public function getImagePath() {
+       if ($this->imagePath == null) {
+           return 'images/placeholder.png';
+       }
+       return $this->imagePath;
+   }
+   public function setImagePath($value) {
+       $this->imagePath = $value;
+   }
+   public function getRatings() {
+       return $this->ratings;
+   }
+   public function setRatings($value) {
+       $this->ratings = $value;
+   }
 }
